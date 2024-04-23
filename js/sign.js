@@ -6,6 +6,7 @@ const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext('2d');
 
 let isDrawing = false;
+let lastX, lastY;
 
 // Text Color Picker
 colorPicker.addEventListener('change', (event) => {
@@ -34,6 +35,13 @@ canvas.addEventListener('contextmenu', (event) => {
 canvas.addEventListener('mouseup', () => {
     if (isDrawing) {
         isDrawing = false;
+    }
+});
+
+canvas.addEventListener('click', (event) => {
+    if (isDrawing) {
+        lastX = event.offsetX;
+        lastY = event.offsetY;
     }
 });
 
