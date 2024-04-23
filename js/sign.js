@@ -5,6 +5,8 @@ const canvas = document.getElementById("myCanvas");
 
 const ctx = canvas.getContext('2d');
 
+let isDrawing = false;
+
 // Text Color Picker
 colorPicker.addEventListener('change', (event) => {
     ctx.fillStyle = event.target.value;
@@ -24,7 +26,19 @@ lineWidthSlider.addEventListener('input', (event) => {
     document.getElementById('lineWidthValue').textContent = lineWidth; // Update the line width value displayed in the span
 });
 
+canvas.addEventListener('contextmenu', (event) => {
+    event.preventDefault();
+});
+
+// On Mouse Up
+canvas.addEventListener('mouseup', () => {
+    if (isDrawing) {
+        isDrawing = false;
+    }
+});
+
 // On Mouse Move
 canvas.addEventListener('mousemove', (event) => {
 
 });
+
