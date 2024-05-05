@@ -8,14 +8,20 @@ body{
         background: radial-gradient(circle, rgba(2,55,87,1) 0%, rgba(116,251,252,1) 100%); 
 }
 
+.canvas-container {
+    width: 100%;
+    max-width: 850px; /* Set maximum width if needed */
+    overflow: hidden; /* Ensure canvas doesn't overflow its container */
+    position: relative; /* Ensure canvas can be positioned relative to its container */
+}
+
 .canvas {
-    height: 420px;
-    width: 850px;
+    width: 100%;
+    height: 100%; /* Make canvas fill its container */
     border: 5px solid rgb(30, 64, 84);
     box-shadow: 0 0 8px 3px rgb(30, 64, 84); /* Glowing effect */
     background-color: white;
-    justify-content: center;
-
+}
 }
 .customize{
     display: flex;
